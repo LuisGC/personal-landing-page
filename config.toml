@@ -50,9 +50,10 @@ disableKinds = ["section", "taxonomy", "taxonomyTerm", "RSS", "robotsTXT", "404"
     scope = [
         "Traditional archer at [Ithilien](http://ithilien.es/)",
         "Critical Thinking promoter at [ARP-SAPC](https://www.escepticos.es/)",
-        "Active mapper at [OpenStreetMap](https://www.openstreetmap.org)"
+        "Active mapper at [OpenStreetMap](https://www.openstreetmap.org)",
+        "Enthusiast blogger at [Luiyología](http://luiyo.net/blog)"
       ]
-    biography = """Ludopath, technopath, cinephile, skeptic, archer and, by every definition, early adopter.<br />ARP-SAPC, CE, STE, AEFCFT, Ludo, OSMF & FSFE Fellow"""
+    biography = """Ludopath, technopath, cinephile, skeptic, archer and, by every definition, early adopter.<br />[ARP-SAPC](http://www.escepticos.es), [CE](http://circuloesceptico.org/), [STE](http://www.sociedadtolkien.org/), [AEFCFT](http://www.aefcft.com/), [OSMF](http://www.osmfoundation.org/) & [FSFE](https://fsfe.org/) Fellow"""
 
   # Contact form settings
 
