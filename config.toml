@@ -1,191 +1,204 @@
-# Site settings
-baseurl = "http://luiyo.net" # without ending slash
+baseurl = "/"
 languageCode = "en-us"
-title = "LuisGC personal website"
-theme = "hugo-identity-theme"
-themesDir = "themes"
+title = "Luiyología"
+theme = "hugo-future-imperfect"
+preserveTaxonomyNames = true
+paginate = 5
+disqusShortname = "luiyologia"
+googleAnalytics = "UA-555064-1"
+pluralizeListTitles = false
 
-# Disable unnecessary kinds
-# disableKinds = ["page", "section", "taxonomy", "taxonomyTerm", "RSS", "sitemap", "robotsTXT", "404"]
-disableKinds = ["section", "taxonomy", "taxonomyTerm", "RSS", "robotsTXT", "404"]
-
-# Enter your tracking code to enable Google Analytics
-#googleAnalytics = "UA-XXXXX-Y"
+[outputFormats]
+[outputFormats.RSS]
+mediatype = "application/rss"
+baseName = "feed"
 
 [params]
+  # Sets the meta tag description
+  description          = "The Science that studies my interests and concerns"
+  # Sets the navbarTitle that appears in the top left of the navigation bar
+  navbarTitle          = "Luiyología"
+  # Sets where "View More Posts" links
+  viewMorePostLink     = "/blog/"
 
-  # Images settings
-  # Icons, backgrounds and avatars folders are placed in theme's static/images folder.
-  # You may place your images in corresponding folders and then set only filenames below to
-  # change page's appearance
+# Optional Params
+  # Sets navbarTitle to match the section of the website
+  dynamicTitles        = true
+  # Sets RSS icons to appear on the sidebar with the social media buttons
+  rssAppearAtTop       = false
+  rssAppearAtBottom    = false
+  # Sets Social Media icons to appear on the sidebar
+  socialAppearAtTop    = true
+  socialAppearAtBottom = true
+  # Sets Categories to sort by number of posts instead of alphabetical
+  categoriesByCount    = true
+  # set to show or to hide categories in the sidebar
+  showSidebarCategories = false
+  # Sets Estimated Reading Time to appear in post headers
+  includeReadingTime   = true
+  # Sets the Favicon and Version for the site. Default support is for
+  # apple-touch-icon-precomposed.png, favicon.png, favicon.ico, and mstile.png.
+  # These are stored in the favicon folder. See the following for more information:
+  # https://github.com/audreyr/favicon-cheat-sheet
+  loadFavicon          = true
+  faviconVersion       = ""
+  # Sets Social Share links to appear on posts
+  socialShare          = true
+  # Sets specific share to appear on posts (default behavior is to appear)
+  socialShareTwitter   = true
+  socialShareGoogleplus = true
+  socialShareFacebook  = true
+  socialShareReddit    = true
+  socialShareLinkedin  = true
+  socialShareStumbleupon = false
+  socialSharePinterest = false
+  socialShareEmail     = true
 
-  # Site icons
-  favicon_ico = "favicon.ico"
-  favicon_ico_sizes = "16x16 32x32"
-  appleicon = "apple.png"
+  # Load custom CSS or JavaScript files. The variable is an array so that you
+  # can load multiple files if necessary. You can also load the standard theme
+  # files by adding the value, "default".
+  # customCSS            = ["default", "/path/to/file"]
+  # customJS             = ["default", "/path/to/file"]
+  customCSS            = ["default", "/css/luiyologia.css"]
+  customJS             = ["default"]
 
-  # Additional options to supplement icons served
-  #favicon_png = "favicon.png"
-  #favicon_png_sizes = "96x96"
-  #favicon_svg = "favicon.svg"
+  # options for highlight.js (version, additional languages, and theme)
+  disable_highlight = false # set to true to disable Highlight
+  highlightjsVersion = "9.11.0"
+  highlightjsCDN = "//cdn.bootcss.com"
+  highlightjsLang = ["r", "yaml", "css"]
+  highlightjsTheme = "github"
 
-  # Link custom assets relative to /static
-  #custom_js  = [""]
-  #custom_css = ["background.css", "icons.css"]
+# Disqus will take priority over Staticman (github.com/eduardoboucas/staticman)
+# due to its ease of use. Feel free to check out both and decide what you would
+# prefer to use. See Staticman.yml for additional settings.
+[params.staticman]
+  # Sets Statiman to be active
+  staticman = false
+  # Sets the location for Staticman to connect to
+  username  = ""
+  repo      = ""
+  branch    = ""
 
-  # Customization switches
-  # Overwrite FontAwesome: see icons.css
-  #custom_icons = true
-  # Overwrite background: see background.css
-  #custom_background = true
+  [params.staticman.recaptcha]
+    sitekey = "SITE_KEY"
+    secret  = "ENCRYPTED_SECRET"
 
-  # Personal data
-  [params.personal]
-    # If name is not set, author is used
-    name = "Luis García Castro"
-    # Avatars can be written to images/avatars/
-    avatar = "avatar.png"
-    position = "Software Engineer and Technical Leader"
-    livesIn = "[Madrid, Spain](https://www.openstreetmap.org/#map=11/40.3892/-3.7058)"
-    scope = [
-        "Traditional archer at [Ithilien](http://ithilien.es/)",
-        "Critical Thinking promoter at [ARP-SAPC](https://www.escepticos.es/)",
-        "Active mapper at [OpenStreetMap](https://www.openstreetmap.org)",
-        "Enthusiast blogger at [Luiyología](http://luiyo.net/blog)"
-      ]
-    biography = """Ludopath, technopath, cinephile, skeptic, archer and, by every definition, early adopter.<br />[ARP-SAPC](http://www.escepticos.es), [CE](http://circuloesceptico.org/), [STE](http://www.sociedadtolkien.org/), [AEFCFT](http://www.aefcft.com/), [OSMF](http://www.osmfoundation.org/) & [FSFE](https://fsfe.org/) Fellow"""
+  # These are optional params related to the sidebar. They are recommended, but not
+  # required for proper functionality. HTML is supported within the params.
+[params.intro]
+  header    = ""
 
-  # Contact form settings
+  paragraph = "The Science that studies my interests and concerns"
 
-  [params.contact]
-    # Since this template is static, the contact form uses www.formspree.io as a
-    # proxy. The form makes a POST request to their servers to send the actual
-    # email. Visitors can send up to a 1000 emails each month for free.
-    #
-    # What you need to do for the setup?
-    #
-    # - set your email address under 'email' below
-    # - upload the generated site to your server
-    # - send a dummy email yourself to confirm your account
-    # - click the confirm link in the email from www.formspree.io
-    # - you're done. Happy mailing!
+  about     = "Ludopath, technopath, cinephile, skeptic and, by every definition, early adopter"
 
-    email = "your@email.com"
+  # This appears at the top of the sidebar above params.intro.header.
+  # A width of less than 100px is recommended from a design perspective.
+  [params.intro.pic]
+    src       = "/img/main/Luiyologia-twitterlogo.png"
+    # Sets Image to be a cirlce
+    circle    = false
+    # Sets Image to be Future Imperfect's hexagon
+    imperfect = false
+    width     = "300"
+    alt       = "Luiyología"
 
-    # It is possible to substitute formspring with other providers
-    # as an example the mailout plugin from caddy.
-    # Provide the post URL for the form and depending on the provider
-    # add some custom JS script to finish the implementation.
+[params.postAmount]
+# Sets the number of recent posts to show in the sidebar. The default value is 5.
+    sidebar = 5
 
-    #postURL = "https://example.com/mailout/"
+# Sets the menu items in the navigation bar
+# Identifier prepends a Font Awesome icon to the menu item
+[[menu.main]]
+  name = "Home"
+  url = "http://luiyo.net/"
+  identifier = "fa fa-home"
+  weight = 1
 
-    enable = false
-    title = "Touch Me!"
-    namePlaceholder = "Name"
-    emailPlaceholder = "Email"
-    messagePlaceholder = "Message"
-    buttonText = "Send it"
-    success = "Thank you for contacting us."
-    error = "Message could not be send. Please contact us at "
+[[menu.main]]
+  name = "About"
+  url = "/about/"
+  identifier = "fa fa-id-card-o"
+  weight = 2
 
-    # Google invisible captcha
-    #[params.contact.captcha]
-    #  sitekey = ""
+[[menu.main]]
+  name = "Blog"
+  url = "/blog/"
+  identifier = "fa fa-newspaper-o"
+  weight = 3
 
-    # Add optional form fields to identify contact forms.
-    #[[params.contact.fields.hidden]]
-    #  name = "someID"
-    #  value = "example.com"
+[[menu.main]]
+  name = "Categories"
+  url = "/categories/"
+  identifier = "fa fa-sitemap"
+  weight = 4
 
-    #[[params.contact.fields.hidden]]
-    # Special values for name such as "page" and "site" will be autofilled
-    #  name = "page"
+[[menu.main]]
+  name = "RSS"
+  url = "/blog/feed.xml"
+  identifier = "fa fa-rss"
+  weight = 5
 
-  # Social settings
-  # You may change these with your social links or add others
 
-  [[params.social]]
-    title = "Twitter"
-    icon = "fa-twitter"
-    link = "https://twitter.com/luiyo"
-    target = "_blank"
+#[[menu.main]]
+#  name = "Itemized"
+#  url = "/itemized/"
+#  identifier = "fa fa-list"
+#  weight = 5
 
-  [[params.social]]
-    title = "Github"
-    icon = "fa-github"
-    link = "https://github.com/luisgc"
-    target = "_blank"
+# [[menu.main]]
+#   name = "Contact"
+#   url = "/contact/"
+#   identifier = "fa fa-envelope-o"
+#   weight = 6
 
-  [[params.social]]
-    title = "LinkedIn"
-    icon = "fa-linkedin"
-    link = "http://linkedin.com/in/luisgc"
-    target = "_blank"
-
-  [[params.social]]
-    title = "Google+"
-    icon = "fa-google-plus"
-    link = "http://plus.google.com/+LuisGarc%C3%ADaCastro"
-    target = "_blank"
-
-  [[params.social]]
-    title = "Flickr"
-    icon = "fa-flickr"
-    link = "https://flickr.com/photos/luiyo"
-    target = "_blank"
-
-  [[params.social]]
-    title = "Reddit"
-    icon = "fa-reddit"
-    link = "http://reddit.com/user/Luiyo"
-    target = "_blank"
-
-  [[params.social]]
-    title = "Medium"
-    icon = "fa-medium"
-    link = "http://medium.com/@luisgc"
-    target = "_blank"
-
-  [[params.social]]
-    title = "slideShare"
-    icon = "fa-slideshare"
-    link = "http://slideshare.com/LuisGarcaCastro"
-    target = "_blank"
-
-  [[params.social]]
-    title = "StackOverflow"
-    icon = "fa-stack-overflow"
-    link = "http://stackoverflow.com/users/2048829/luisgc"
-    target = "_blank"
-
-  # Footer settings
-  [params.footer]
-    # If copyright is not set, author is used
-    copyright = "Luis García Castro"
-
-  # Page license
-  [params.license]
-    link = "https://creativecommons.org/licenses/by-sa/4.0/legalcode"
-    name = "CC-BY-SA-4.0"
-
-  # Credits
-  [[params.credits]]
-    # Title is used as URL text
-    title = "HTML5 UP"
-    # Text will be used to explain the credit
-    text = "Design by"
-    link = "https://html5up.net"
-
-  [[params.credits]]
-    title = "Hugo"
-    text = "Powered by"
-    link = "https://www.gohugo.io/"
-
-  # Optional piwik tracking
-  #[params.analytics.piwik]
-  #  URL = "https://stats.example.com"
-  #  ID = "42"
-  #  # Track all subdomains with "*.example.com"
-  #  domain = "www.example.com"
-  #  # Optional integrity check hash
-  #  hash = "sha512-RfeD0pacGTqy9m7U6PgehQfS4cc7SIt+e+P+H5e848kEvB/RW84CUGO3O4O3LNbxjevym6KPUZ8muPsMrI8WIw=="
+# Sets Social Media icons to appear and link to your account. Value should be your
+# username unless otherwise noted. These are the icons affected by socialAppearAtTop
+# and socialAppearAtBottom.
+[social]
+  # Coding Communities
+  github           = "luisgc"
+  gitlab           = ""
+  stackoverflow    = "" # User Number
+  bitbucket        = ""
+  jsfiddle         = ""
+  codepen          = ""
+  # Visual Art Communities
+  deviantart       = ""
+  flickr           = "luiyo"
+  behance          = ""
+  dribbble         = ""
+  # Publishing Communities
+  wordpress        = ""
+  medium           = ""
+  # Professional/Business Oriented Communities
+  linkedin         = "luisgc"
+  linkedin_company = ""
+  foursquare       = ""
+  xing             = ""
+  slideshare       = "LuisGarcaCastro"
+  # Social Networks
+  facebook         = ""
+  googleplus       = "LuisGarc&iacute;aCastro"
+  reddit           = "Luiyo"
+  quora            = ""
+  youtube          = ""
+  vimeo            = ""
+  whatsapp         = "" # WhatsApp Number
+    # WeChat and QQ need testing.
+    wechat         = ""
+    qq             = "" # User ID Number
+  instagram        = ""
+  tumblr           = ""
+  twitter          = "luiyo"
+  skype            = ""
+  snapchat         = ""
+  pinterest        = ""
+  telegram         = ""
+  vine             = ""
+  googlescholar    = ""
+  orcid            = ""
+  researchgate     = ""
+  # Email
+  email            = "luiyologia@gmail.com"
